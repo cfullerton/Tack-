@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E5016B21BE198880077E112 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5016B11BE198880077E112 /* iAd.framework */; };
+		6E5016B41BE1AFB20077E112 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5016B31BE1AFB20077E112 /* CoreLocation.framework */; };
 		6EF7144B1BD5B50A00EE3257 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF7144A1BD5B50A00EE3257 /* main.m */; };
 		6EF7144E1BD5B50A00EE3257 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF7144D1BD5B50A00EE3257 /* AppDelegate.m */; };
 		6EF714511BD5B50A00EE3257 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF714501BD5B50A00EE3257 /* ViewController.m */; };
@@ -15,6 +17,7 @@
 		6EF714591BD5B50A00EE3257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF714571BD5B50A00EE3257 /* LaunchScreen.storyboard */; };
 		6EF714641BD5B50A00EE3257 /* Tack_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF714631BD5B50A00EE3257 /* Tack_Tests.m */; };
 		6EF7146F1BD5B50A00EE3257 /* Tack_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF7146E1BD5B50A00EE3257 /* Tack_UITests.m */; };
+		6EF7147D1BD5B5DC00EE3257 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF7147C1BD5B5DC00EE3257 /* CoreImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E5016B11BE198880077E112 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		6E5016B31BE1AFB20077E112 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6EF714461BD5B50A00EE3257 /* Tack!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tack!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF7144A1BD5B50A00EE3257 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6EF7144C1BD5B50A00EE3257 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 		6EF7146A1BD5B50A00EE3257 /* Tack!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tack!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EF7146E1BD5B50A00EE3257 /* Tack_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tack_UITests.m; sourceTree = "<group>"; };
 		6EF714701BD5B50A00EE3257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF7147C1BD5B5DC00EE3257 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5016B41BE1AFB20077E112 /* CoreLocation.framework in Frameworks */,
+				6E5016B21BE198880077E112 /* iAd.framework in Frameworks */,
+				6EF7147D1BD5B5DC00EE3257 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +90,9 @@
 		6EF7143D1BD5B50A00EE3257 = {
 			isa = PBXGroup;
 			children = (
+				6E5016B31BE1AFB20077E112 /* CoreLocation.framework */,
+				6E5016B11BE198880077E112 /* iAd.framework */,
+				6EF7147C1BD5B5DC00EE3257 /* CoreImage.framework */,
 				6EF714481BD5B50A00EE3257 /* Tack! */,
 				6EF714621BD5B50A00EE3257 /* Tack!Tests */,
 				6EF7146D1BD5B50A00EE3257 /* Tack!UITests */,
@@ -207,6 +219,7 @@
 				TargetAttributes = {
 					6EF714451BD5B50A00EE3257 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = T68566V8YJ;
 					};
 					6EF7145E1BD5B50A00EE3257 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -413,10 +426,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Tack!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "connerfullerton.com.Tack-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,10 +441,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Tack!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "connerfullerton.com.Tack-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -498,6 +519,7 @@
 				6EF714751BD5B50A00EE3257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EF714761BD5B50A00EE3257 /* Build configuration list for PBXNativeTarget "Tack!Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +528,7 @@
 				6EF714781BD5B50A00EE3257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6EF714791BD5B50A00EE3257 /* Build configuration list for PBXNativeTarget "Tack!UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +537,7 @@
 				6EF7147B1BD5B50A00EE3257 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <coreLocation/Corelocation.h>
+#import <iAd/iAd.h>
+@interface ViewController : UIViewController<ADBannerViewDelegate, CLLocationManagerDelegate,UITextFieldDelegate>
+- (IBAction)firstWindAction:(id)sender;
 
-@interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *firstWind;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arrow;
+@property (weak, nonatomic) IBOutlet UIButton *windShot;
+- (IBAction)setWind:(id)sender;
 
 
 @end
