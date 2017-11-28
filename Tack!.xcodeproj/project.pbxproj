@@ -18,6 +18,14 @@
 		6EF714641BD5B50A00EE3257 /* Tack_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF714631BD5B50A00EE3257 /* Tack_Tests.m */; };
 		6EF7146F1BD5B50A00EE3257 /* Tack_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF7146E1BD5B50A00EE3257 /* Tack_UITests.m */; };
 		6EF7147D1BD5B5DC00EE3257 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF7147C1BD5B5DC00EE3257 /* CoreImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		BC4772811FCCF3FD0091902B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC47727F1FCCF3FD0091902B /* Interface.storyboard */; };
+		BC4772831FCCF3FD0091902B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4772821FCCF3FD0091902B /* Assets.xcassets */; };
+		BC47728A1FCCF3FE0091902B /* Tack-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BC4772891FCCF3FE0091902B /* Tack-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BC47728F1FCCF3FE0091902B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC47728E1FCCF3FE0091902B /* InterfaceController.swift */; };
+		BC4772911FCCF3FE0091902B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4772901FCCF3FE0091902B /* ExtensionDelegate.swift */; };
+		BC4772931FCCF3FE0091902B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4772921FCCF3FE0091902B /* NotificationController.swift */; };
+		BC4772951FCCF3FE0091902B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4772941FCCF3FE0091902B /* Assets.xcassets */; };
+		BC47729A1FCCF3FE0091902B /* Tack-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BC47727D1FCCF3FD0091902B /* Tack-Watch.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +43,46 @@
 			remoteGlobalIDString = 6EF714451BD5B50A00EE3257;
 			remoteInfo = "Tack!";
 		};
+		BC47728B1FCCF3FE0091902B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EF7143E1BD5B50A00EE3257 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC4772881FCCF3FE0091902B;
+			remoteInfo = "Tack-Watch Extension";
+		};
+		BC4772981FCCF3FE0091902B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EF7143E1BD5B50A00EE3257 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC47727C1FCCF3FD0091902B;
+			remoteInfo = "Tack-Watch";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC4772A01FCCF3FF0091902B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BC47728A1FCCF3FE0091902B /* Tack-Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC4772A21FCCF3FF0091902B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BC47729A1FCCF3FE0091902B /* Tack-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6E5016B11BE198880077E112 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -57,6 +104,17 @@
 		6EF7146E1BD5B50A00EE3257 /* Tack_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tack_UITests.m; sourceTree = "<group>"; };
 		6EF714701BD5B50A00EE3257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EF7147C1BD5B5DC00EE3257 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		BC47727D1FCCF3FD0091902B /* Tack-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tack-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4772801FCCF3FD0091902B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		BC4772821FCCF3FD0091902B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC4772841FCCF3FE0091902B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC4772891FCCF3FE0091902B /* Tack-Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tack-Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC47728E1FCCF3FE0091902B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		BC4772901FCCF3FE0091902B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		BC4772921FCCF3FE0091902B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		BC4772941FCCF3FE0091902B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC4772961FCCF3FE0091902B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC4772971FCCF3FE0091902B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +142,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC4772861FCCF3FE0091902B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +161,8 @@
 				6EF714481BD5B50A00EE3257 /* Tack! */,
 				6EF714621BD5B50A00EE3257 /* Tack!Tests */,
 				6EF7146D1BD5B50A00EE3257 /* Tack!UITests */,
+				BC47727E1FCCF3FD0091902B /* Tack-Watch */,
+				BC47728D1FCCF3FE0091902B /* Tack-Watch Extension */,
 				6EF714471BD5B50A00EE3257 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +173,8 @@
 				6EF714461BD5B50A00EE3257 /* Tack!.app */,
 				6EF7145F1BD5B50A00EE3257 /* Tack!Tests.xctest */,
 				6EF7146A1BD5B50A00EE3257 /* Tack!UITests.xctest */,
+				BC47727D1FCCF3FD0091902B /* Tack-Watch.app */,
+				BC4772891FCCF3FE0091902B /* Tack-Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +221,29 @@
 			path = "Tack!UITests";
 			sourceTree = "<group>";
 		};
+		BC47727E1FCCF3FD0091902B /* Tack-Watch */ = {
+			isa = PBXGroup;
+			children = (
+				BC47727F1FCCF3FD0091902B /* Interface.storyboard */,
+				BC4772821FCCF3FD0091902B /* Assets.xcassets */,
+				BC4772841FCCF3FE0091902B /* Info.plist */,
+			);
+			path = "Tack-Watch";
+			sourceTree = "<group>";
+		};
+		BC47728D1FCCF3FE0091902B /* Tack-Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BC47728E1FCCF3FE0091902B /* InterfaceController.swift */,
+				BC4772901FCCF3FE0091902B /* ExtensionDelegate.swift */,
+				BC4772921FCCF3FE0091902B /* NotificationController.swift */,
+				BC4772941FCCF3FE0091902B /* Assets.xcassets */,
+				BC4772961FCCF3FE0091902B /* Info.plist */,
+				BC4772971FCCF3FE0091902B /* PushNotificationPayload.apns */,
+			);
+			path = "Tack-Watch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,10 +254,12 @@
 				6EF714421BD5B50A00EE3257 /* Sources */,
 				6EF714431BD5B50A00EE3257 /* Frameworks */,
 				6EF714441BD5B50A00EE3257 /* Resources */,
+				BC4772A21FCCF3FF0091902B /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BC4772991FCCF3FE0091902B /* PBXTargetDependency */,
 			);
 			name = "Tack!";
 			productName = "Tack!";
@@ -208,12 +302,47 @@
 			productReference = 6EF7146A1BD5B50A00EE3257 /* Tack!UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		BC47727C1FCCF3FD0091902B /* Tack-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC4772A11FCCF3FF0091902B /* Build configuration list for PBXNativeTarget "Tack-Watch" */;
+			buildPhases = (
+				BC47727B1FCCF3FD0091902B /* Resources */,
+				BC4772A01FCCF3FF0091902B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC47728C1FCCF3FE0091902B /* PBXTargetDependency */,
+			);
+			name = "Tack-Watch";
+			productName = "Tack-Watch";
+			productReference = BC47727D1FCCF3FD0091902B /* Tack-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		BC4772881FCCF3FE0091902B /* Tack-Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC47729F1FCCF3FF0091902B /* Build configuration list for PBXNativeTarget "Tack-Watch Extension" */;
+			buildPhases = (
+				BC4772851FCCF3FE0091902B /* Sources */,
+				BC4772861FCCF3FE0091902B /* Frameworks */,
+				BC4772871FCCF3FE0091902B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tack-Watch Extension";
+			productName = "Tack-Watch Extension";
+			productReference = BC4772891FCCF3FE0091902B /* Tack-Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6EF7143E1BD5B50A00EE3257 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Conner Fullerton";
 				TargetAttributes = {
@@ -228,6 +357,14 @@
 					6EF714691BD5B50A00EE3257 = {
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = 6EF714451BD5B50A00EE3257;
+					};
+					BC47727C1FCCF3FD0091902B = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					BC4772881FCCF3FE0091902B = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -247,6 +384,8 @@
 				6EF714451BD5B50A00EE3257 /* Tack! */,
 				6EF7145E1BD5B50A00EE3257 /* Tack!Tests */,
 				6EF714691BD5B50A00EE3257 /* Tack!UITests */,
+				BC47727C1FCCF3FD0091902B /* Tack-Watch */,
+				BC4772881FCCF3FE0091902B /* Tack-Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +412,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC47727B1FCCF3FD0091902B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4772831FCCF3FD0091902B /* Assets.xcassets in Resources */,
+				BC4772811FCCF3FD0091902B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC4772871FCCF3FE0091902B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4772951FCCF3FE0091902B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +461,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC4772851FCCF3FE0091902B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4772931FCCF3FE0091902B /* NotificationController.swift in Sources */,
+				BC4772911FCCF3FE0091902B /* ExtensionDelegate.swift in Sources */,
+				BC47728F1FCCF3FE0091902B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -317,6 +483,16 @@
 			isa = PBXTargetDependency;
 			target = 6EF714451BD5B50A00EE3257 /* Tack! */;
 			targetProxy = 6EF7146B1BD5B50A00EE3257 /* PBXContainerItemProxy */;
+		};
+		BC47728C1FCCF3FE0091902B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC4772881FCCF3FE0091902B /* Tack-Watch Extension */;
+			targetProxy = BC47728B1FCCF3FE0091902B /* PBXContainerItemProxy */;
+		};
+		BC4772991FCCF3FE0091902B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC47727C1FCCF3FD0091902B /* Tack-Watch */;
+			targetProxy = BC4772981FCCF3FE0091902B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -335,6 +511,14 @@
 				6EF714581BD5B50A00EE3257 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BC47727F1FCCF3FD0091902B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC4772801FCCF3FD0091902B /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -500,6 +684,142 @@
 			};
 			name = Release;
 		};
+		BC47729B1FCCF3FF0091902B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Tack_Watch_Extension;
+				INFOPLIST_FILE = "Tack-Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "connerfullerton.com.Tack-.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		BC47729C1FCCF3FF0091902B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = Tack_Watch_Extension;
+				INFOPLIST_FILE = "Tack-Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "connerfullerton.com.Tack-.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
+		BC47729D1FCCF3FF0091902B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tack-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "connerfullerton.com.Tack-.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Debug;
+		};
+		BC47729E1FCCF3FF0091902B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Tack-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "connerfullerton.com.Tack-.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -535,6 +855,24 @@
 			buildConfigurations = (
 				6EF7147A1BD5B50A00EE3257 /* Debug */,
 				6EF7147B1BD5B50A00EE3257 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC47729F1FCCF3FF0091902B /* Build configuration list for PBXNativeTarget "Tack-Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC47729D1FCCF3FF0091902B /* Debug */,
+				BC47729E1FCCF3FF0091902B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC4772A11FCCF3FF0091902B /* Build configuration list for PBXNativeTarget "Tack-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC47729B1FCCF3FF0091902B /* Debug */,
+				BC47729C1FCCF3FF0091902B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

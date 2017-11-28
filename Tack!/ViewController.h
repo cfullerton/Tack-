@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <coreLocation/Corelocation.h>
 #import <iAd/iAd.h>
-@interface ViewController : UIViewController<ADBannerViewDelegate, CLLocationManagerDelegate,UITextFieldDelegate>
+@import WatchConnectivity;
+@interface ViewController : UIViewController<ADBannerViewDelegate, CLLocationManagerDelegate,UITextFieldDelegate,WCSessionDelegate>
 - (IBAction)firstWindAction:(id)sender;
-
+@property (nonatomic) WCSession* session;
 @property (weak, nonatomic) IBOutlet UIButton *firstWind;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *arrow;

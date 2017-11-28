@@ -27,6 +27,8 @@
 @end
 
 @implementation ViewController
+
+
 int windDirection;
 int tackingAngle = 45;
 int minutes=5;
@@ -34,6 +36,12 @@ int seconds=0;
 bool timeMode=0;
 NSTimer *timer;
 - (void)viewDidLoad {
+    if ([WCSession isSupported]) {
+        self.session = [WCSession defaultSession];
+        self.session.delegate = self;
+        [self.session activateSession];
+    }
+    
     [super viewDidLoad];
     self.currentHeading = [[CLHeading alloc] init];
     self.LocationManager = [[CLLocationManager alloc] init];
