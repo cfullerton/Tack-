@@ -1,14 +1,62 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialHB.ttc">
+            <string>ArialHebrew-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tack_Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="bottom" contentMode="bottom" id="SQC-ZE-EFY">
+                            <items>
+                                <button width="0.5" alignment="right" verticalAlignment="bottom" title="WShot" id="G6r-jL-j5b">
+                                    <connections>
+                                        <action selector="windPressed" destination="AgC-eL-Hgc" id="7O4-Gt-9qs"/>
+                                    </connections>
+                                </button>
+                                <button width="0.40000000000000002" alignment="left" verticalAlignment="bottom" title="Gun!" id="IEP-dj-Psd">
+                                    <connections>
+                                        <action selector="gunPressed" destination="AgC-eL-Hgc" id="YKL-38-zfw"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="luX-5s-CvV">
+                            <items>
+                                <label width="0.5" alignment="left" text="⬇" textAlignment="center" id="z0y-9N-vfc">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="36"/>
+                                </label>
+                                <label width="0.5" height="1" alignment="right" text="300" id="swz-Ls-yNc">
+                                    <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="35"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="0.29999999999999999" alignment="left" id="B6Q-gO-PrT">
+                            <items>
+                                <label width="0.5" height="1" alignment="left" text="300" id="S4T-7H-Xtu"/>
+                                <label width="0.29999999999999999" height="1" alignment="left" text="20.0" id="g0c-bZ-hCQ"/>
+                                <label width="0.20000000000000001" height="1" alignment="left" text="kts" id="unq-VH-aMQ"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="headingLabel" destination="S4T-7H-Xtu" id="AST-PG-xhy"/>
+                        <outlet property="liftLabel" destination="z0y-9N-vfc" id="5DK-6X-zlm"/>
+                        <outlet property="offLabel" destination="swz-Ls-yNc" id="pJK-k5-MII"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -31,7 +79,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Tack_Watch" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

@@ -36,10 +36,18 @@ int seconds=0;
 bool timeMode=0;
 NSTimer *timer;
 - (void)viewDidLoad {
+    
     if ([WCSession isSupported]) {
         self.session = [WCSession defaultSession];
         self.session.delegate = self;
         [self.session activateSession];
+        NSString * someString = @"Something To Print";
+        NSLog(@"%@", someString);
+        printf("hello");
+
+    }else{
+        NSString * someString = @"nope";
+        NSLog(@"%@", someString);
     }
     
     [super viewDidLoad];
@@ -149,6 +157,7 @@ NSTimer *timer;
     if (!timeMode){
         self.headingLabel.text = [NSString stringWithFormat:@"%d", (int)newHeading.magneticHeading];
     }
+    int liftAmount=0;
     if (windDirection)
     {
         int angleOff = abs(((int)newHeading.magneticHeading - windDirection + 360) %360); //amount lifted or headed
@@ -156,7 +165,7 @@ NSTimer *timer;
         {
             angleOff = 360 - angleOff;
         }
-        int liftAmount= abs(tackingAngle-angleOff);
+        liftAmount= abs(tackingAngle-angleOff);
         
         if (angleOff>tackingAngle)
         {
@@ -171,8 +180,20 @@ NSTimer *timer;
     }
     self.firstWind.enabled = YES;
     self.windShot.enabled = YES;
+    NSDictionary *applicationDict = @{@"heading":[NSString stringWithFormat:@"%d", (int)newHeading.magneticHeading],
+                                      @"angleOff":[NSString stringWithFormat:@"%d", (int)liftAmount],
+                                      @"headOrLift":self.liftHead.text
+                                      };
+    [self.session sendMessage:applicationDict
+                               replyHandler:^(NSDictionary *reply) {
+                                   //handle reply from iPhone app here
+                               }
+                               errorHandler:^(NSError *error) {
+                                   //catch any errors here
+                               }
+     ];
+    
 }
-
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
   if (self.currentHeading == nil)
@@ -216,5 +237,56 @@ NSTimer *timer;
         [self.firstWind removeFromSuperview];
     }
     
+}
+/*
+- (void)session:(nonnull WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary *)applicationContext {
+    
+    NSString *watchButtonPressed = [applicationContext objectForKey:@"button"];
+    if([watchButtonPressed isEqualToString:@"gun"]){
+        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!timeMode){
+                timeMode=true;
+                [self timerStart];
+                [self.gun setTitle:@"Sync" forState:UIControlStateNormal];
+            }else{
+                seconds=0;
+            }
+        });
+    }else if([watchButtonPressed isEqualToString:@"wind"]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.currentHeading){
+                windDirection= (int)self.currentHeading.magneticHeading;
+                [self.firstWind removeFromSuperview];
+            }
+        });
+    
+    }
+}
+*/
+- (void)session:(nonnull WCSession *)session didReceiveMessage:(nonnull NSDictionary *)message replyHandler:(nonnull void (^)(NSDictionary * __nonnull))replyHandler {
+    NSString *watchButtonPressed = [message objectForKey:@"button"];
+    if([watchButtonPressed isEqualToString:@"gun"]){
+        //Use this to update the UI instantaneously (otherwise, takes a little while)
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!timeMode){
+                timeMode=true;
+                [self timerStart];
+                [self.gun setTitle:@"Sync" forState:UIControlStateNormal];
+            }else{
+                seconds=0;
+            }
+        });
+    }else if([watchButtonPressed isEqualToString:@"wind"]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.currentHeading){
+                windDirection= (int)self.currentHeading.magneticHeading;
+                [self.firstWind removeFromSuperview];
+                
+            }
+        });
+        
+    }
+   
 }
 @end
