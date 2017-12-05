@@ -33,9 +33,9 @@
                                 </button>
                             </items>
                         </group>
-                        <group width="1" alignment="left" id="luX-5s-CvV">
+                        <group width="1" height="0.29999999999999999" alignment="left" id="luX-5s-CvV">
                             <items>
-                                <label width="0.5" alignment="left" text="⬇" textAlignment="center" id="z0y-9N-vfc">
+                                <label width="0.5" alignment="left" textAlignment="center" id="z0y-9N-vfc">
                                     <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="36"/>
                                 </label>
                                 <label width="0.5" height="1" alignment="right" text="300" id="swz-Ls-yNc">
@@ -55,6 +55,7 @@
                         <outlet property="headingLabel" destination="S4T-7H-Xtu" id="AST-PG-xhy"/>
                         <outlet property="liftLabel" destination="z0y-9N-vfc" id="5DK-6X-zlm"/>
                         <outlet property="offLabel" destination="swz-Ls-yNc" id="pJK-k5-MII"/>
+                        <outlet property="speedLabel" destination="g0c-bZ-hCQ" id="oxU-eP-LaS"/>
                     </connections>
                 </controller>
             </objects>

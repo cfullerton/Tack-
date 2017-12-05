@@ -12,7 +12,15 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController {
     var session : WCSession!
-
+    var timer = Timer()
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounting(){
+        sendButtonPress(button: "getData")
+    }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -31,7 +39,7 @@ class InterfaceController: WKInterfaceController {
             session.activate()
             
         }
-        
+        scheduledTimerWithTimeInterval()
         
     }
     
@@ -41,7 +49,7 @@ class InterfaceController: WKInterfaceController {
         
     }
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-       
+        
     }
     @IBAction func gunPressed() {
         //send gun pressed event
@@ -58,7 +66,6 @@ class InterfaceController: WKInterfaceController {
             let heading = replyMessage["heading"] as? String
             let angleOff = replyMessage["angleOff"] as? String
             let headOrLift = replyMessage["headOrLift"] as? String
-            self.headingLabel.setText("test");
             //Use this to update the UI instantaneously (otherwise, takes a little while)
             DispatchQueue.main.async() {
                 self.headingLabel.setText(heading);
@@ -73,36 +80,26 @@ class InterfaceController: WKInterfaceController {
     }
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Swift.Void)
  
-    /* func session(_ session: WCSession,
-                 didReceiveMessage message: [String : Any]) */
     {
         let heading = message["heading"] as? String
         let angleOff = message["angleOff"] as? String
         let headOrLift = message["headOrLift"] as? String
-        self.headingLabel.setText("test");
+        let speed = message["speed"] as? String
+       
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         DispatchQueue.main.async() {
             self.headingLabel.setText(heading);
             self.offLabel.setText(angleOff);
             self.liftLabel.setText(headOrLift)
-            
+            self.speedLabel.setText(speed)
             
         }
-        self.offLabel.setText(angleOff);
-        self.liftLabel.setText(headOrLift);
-        self.headingLabel.setText(heading);
+       
  
     }
-    weak var timer: Timer?
     
-    func startTimer() {
-        timer?.invalidate()   // just in case you had existing `Timer`, `invalidate` it before we lose our reference to it
-        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { [weak self] _ in
-            // do something here
-            self?.sendButtonPress(button: "getData")
-        }
-    }
-
+    @IBOutlet var speedLabel: WKInterfaceLabel!
+    
     @IBOutlet var liftLabel: WKInterfaceLabel!
     @IBOutlet var offLabel: WKInterfaceLabel!
     @IBOutlet var headingLabel: WKInterfaceLabel!

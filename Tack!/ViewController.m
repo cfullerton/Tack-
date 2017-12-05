@@ -180,20 +180,7 @@ NSTimer *timer;
     }
     self.firstWind.enabled = YES;
     self.windShot.enabled = YES;
-    
-    NSDictionary *applicationDict = @{@"heading":[NSString stringWithFormat:@"%d", (int)newHeading.magneticHeading],
-                                      @"angleOff":[NSString stringWithFormat:@"%d", (int)liftAmount],
-                                      @"headOrLift":self.liftHead.text
-                                      };
-    
-    [[WCSession defaultSession] sendMessage:applicationDict
-                               replyHandler:^(NSDictionary *reply) {
-                                   //handle reply from iPhone app here
-                               }
-                               errorHandler:^(NSError *error) {
-                                   //catch any errors here
-                               }
-     ];
+
    
 }
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
@@ -240,32 +227,7 @@ NSTimer *timer;
     }
     
 }
-/*
-- (void)session:(nonnull WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary *)applicationContext {
-    
-    NSString *watchButtonPressed = [applicationContext objectForKey:@"button"];
-    if([watchButtonPressed isEqualToString:@"gun"]){
-        //Use this to update the UI instantaneously (otherwise, takes a little while)
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (!timeMode){
-                timeMode=true;
-                [self timerStart];
-                [self.gun setTitle:@"Sync" forState:UIControlStateNormal];
-            }else{
-                seconds=0;
-            }
-        });
-    }else if([watchButtonPressed isEqualToString:@"wind"]){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (self.currentHeading){
-                windDirection= (int)self.currentHeading.magneticHeading;
-                [self.firstWind removeFromSuperview];
-            }
-        });
-    
-    }
-}
-*/
+
 - (void)session:(nonnull WCSession *)session didReceiveMessage:(nonnull NSDictionary *)message replyHandler:(nonnull void (^)(NSDictionary * __nonnull))replyHandler {
     NSString *watchButtonPressed = [message objectForKey:@"button"];
     if([watchButtonPressed isEqualToString:@"gun"]){
@@ -288,12 +250,13 @@ NSTimer *timer;
             }
         });
         
-    }else if ([watchButtonPressed isEqualToString:@"getData"]){
+    } //else if ([watchButtonPressed isEqualToString:@"getData"]){
         replyHandler(@{@"heading":[NSString stringWithFormat:@"%@", self.headingLabel.text],
                        @"angleOff":[NSString stringWithFormat:@"%@", self.amountLabel.text],
-                       @"headOrLift":[NSString stringWithFormat:@"%@", self.liftHead.text]
+                       @"headOrLift":[NSString stringWithFormat:@"%@", self.liftHead.text],
+                       @"speed":[NSString stringWithFormat:@"%@", self.speedLabel.text]
                        });
-    }
+   // }
    
 }
 @end
