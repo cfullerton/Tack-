@@ -180,11 +180,13 @@ NSTimer *timer;
     }
     self.firstWind.enabled = YES;
     self.windShot.enabled = YES;
+    
     NSDictionary *applicationDict = @{@"heading":[NSString stringWithFormat:@"%d", (int)newHeading.magneticHeading],
                                       @"angleOff":[NSString stringWithFormat:@"%d", (int)liftAmount],
                                       @"headOrLift":self.liftHead.text
                                       };
-    [self.session sendMessage:applicationDict
+    
+    [[WCSession defaultSession] sendMessage:applicationDict
                                replyHandler:^(NSDictionary *reply) {
                                    //handle reply from iPhone app here
                                }
@@ -192,7 +194,7 @@ NSTimer *timer;
                                    //catch any errors here
                                }
      ];
-    
+   
 }
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
 {
@@ -286,6 +288,11 @@ NSTimer *timer;
             }
         });
         
+    }else if ([watchButtonPressed isEqualToString:@"getData"]){
+        replyHandler(@{@"heading":[NSString stringWithFormat:@"%@", self.headingLabel.text],
+                       @"angleOff":[NSString stringWithFormat:@"%@", self.amountLabel.text],
+                       @"headOrLift":[NSString stringWithFormat:@"%@", self.liftHead.text]
+                       });
     }
    
 }
